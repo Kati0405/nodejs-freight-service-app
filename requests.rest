@@ -1,0 +1,132 @@
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "katirin90@gmail.com",
+    "password": "katirin",
+    "role": "SHIPPER"
+}
+
+###
+
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "katirin90@gmail.com",
+    "password": "katirin"
+}
+
+###
+
+POST http://localhost:8080/api/auth/forgot_password
+Content-Type: application/json
+
+{
+    "email": "katirin90@gmail.com"
+}
+
+###
+
+GET http://localhost:8080/api/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+
+###
+PATCH http://localhost:8080/api/users/me/password
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExMDgzMDd9.9OBqS77BDTVUzRCXCaYDBmOnLHxULLJpoWkJXcPCeLo
+
+{
+  "oldPassword": "katirin",
+  "newPassword": "11111"
+}
+
+###
+DELETE http://localhost:8080/api/users/me/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjk0NzV9.UnE88rSekhNQRJSg3qqdaxtyva9eL1ZAbj4bOwXSre0
+
+###
+GET http://localhost:8080/api/trucks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+
+###
+POST http://localhost:8080/api/trucks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+
+{
+  "type": "BUS"
+}
+
+###
+GET http://localhost:8080/api/trucks/63034adfbb37a79f8ad448d7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+
+###
+PUT http://localhost:8080/api/trucks/63034adfbb37a79f8ad448d7
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+
+{
+  "type": "SLOW SPRINTER"
+}
+
+###
+DELETE  http://localhost:8080/api/trucks/630362a6f01ed45e1b28eec9
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+
+
+###
+POST http://localhost:8080/api/loads
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+
+{
+  "name": "Moving boxes",
+  "payload": 100,
+  "pickupAddress": "Flat 25, 12/F, Acacia Building 150 Kennedy Road",
+  "deliveryAddress": "Sr. Rodrigo Domínguez Av. Bellavista N° 185",
+  "dimensions": {
+    "width": 44,
+    "length": 32,
+    "height": 66
+  }
+}
+
+###
+GET http://localhost:8080/api/loads
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+
+
+###
+GET http://localhost:8080/api/loads/63037be6cb30cf8f5540aa7f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+
+###
+PUT http://localhost:8080/api/loads/63037be6cb30cf8f5540aa7f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+
+{
+  "name": "Moving something",
+  "payload": 200,
+  "pickupAddress": "Flat 25, 12/F, Acacia Building 150 Kennedy Road",
+  "deliveryAddress": "Sr. Rodrigo Domínguez Av. Bellavista N° 185",
+  "dimensions": {
+    "width": 100,
+    "length": 22,
+    "height": 33
+  }
+}
+
+###
+DELETE http://localhost:8080/api/loads/63037be6cb30cf8f5540aa7f
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
