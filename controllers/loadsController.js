@@ -133,9 +133,9 @@ const postLoadById = async (req, res) => {
           $set: {
             status: 'ASSIGNED',
             state: 'En Route to Pick Up',
-            assignedTo: truck._id,
-            $push: { logs: 'Truck was found' },
+            assignedTo: truck.assignedTo,
           },
+          $push: { logs: 'Truck was found' },
         },
       );
       await Truck.findByIdAndUpdate(
@@ -192,14 +192,14 @@ const iterateToNextLoadState = async (req, res) => {
     } else {
       const loadState = activeLoad.state;
       if (loadState !== 'Arrived to Delivery') {
-        await activeLoad.update({ state: states.indexOf(loadState) + 1 });
+        await activeLoad.updateOne({ state: states.indexOf(loadState) + 1 });
         res
           .status(200)
           .json({ message: `Load state changed to '${loadState}'` });
       } else {
         await activeLoad.update({ status: 'SHIPPED' });
         const truck = await Truck.findOne({ assignedTo: driverId });
-        await truck.update({ status: 'IS' });
+        await truck.updateOne({ status: 'IS' });
         res
           .status(200)
           .json({ message: `Load state changed to '${loadState}'` });
