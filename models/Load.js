@@ -6,6 +6,11 @@ const DimensionSchema = mongoose.Schema({
   height: { type: Number },
 });
 
+const LogSchema = mongoose.Schema({
+  message: { type: String },
+  time: { type: Date, default: () => Date.now() },
+});
+
 const Load = mongoose.model('Load', {
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
@@ -52,7 +57,7 @@ const Load = mongoose.model('Load', {
     required: true,
   },
   logs: {
-    type: Array,
+    type: [LogSchema],
     default: [],
   },
   createdDate: {
