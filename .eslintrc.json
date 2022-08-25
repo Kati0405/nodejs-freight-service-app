@@ -22,6 +22,8 @@
               }
             }
           ],
-          "no-underscore-dangle":  ["error", { "allow": ["_id"] }]
+          "no-underscore-dangle":  ["error", { "allow": ["_id"] }],
+          "ObjectExpression": { "multiline": true, "minProperties": 1 }
+          
     }
 }

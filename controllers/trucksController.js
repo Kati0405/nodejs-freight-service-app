@@ -3,27 +3,29 @@ const { Truck } = require('../models/Truck');
 const getTrucks = async (req, res) => {
   Truck.find({ userId: req.user.userId })
     .then((trucks) => {
-      res.status(200).send({ trucks });
+      res.status(200).json({ trucks });
     })
     .catch(() => {
-      res.status(400).send('Error');
+      res.status(400).json('Error');
     });
 };
 
 const createTruck = async (req, res) => {
   const createdBy = req.user.id;
-  const { type } = req.body;
+  const { type, dimensions, payload } = req.body;
   const truck = new Truck({
     createdBy,
     type,
+    dimensions,
+    payload,
   });
   truck
     .save()
     .then((result) => {
-      res.status(200).send({ message: 'Truck created successfully', result });
+      res.status(200).json({ message: 'Truck created successfully', result });
     })
     .catch(() => {
-      res.status(400).send('Error');
+      res.status(400).json('Error');
     });
 };
 
@@ -31,10 +33,10 @@ const getTruckById = async (req, res) => {
   const { id } = req.params;
   return Truck.findById(id)
     .then((result) => {
-      res.status(200).send({ message: 'Success', truck: result });
+      res.status(200).json({ message: 'Success', truck: result });
     })
     .catch(() => {
-      res.status(400).send('Error');
+      res.status(400).json('Error');
     });
 };
 
@@ -47,12 +49,7 @@ const updateTruckById = async (req, res) => {
     },
     { $set: { type } },
   );
-  res
-    .status(200)
-    .send({ message: 'Truck details changed successfully' })
-    .catch(() => {
-      res.status(400).send('Error');
-    });
+  res.status(200).send({ message: 'Truck details changed successfully' });
 };
 
 const deleteTruckById = async (req, res) => {
@@ -62,15 +59,33 @@ const deleteTruckById = async (req, res) => {
         res.status(404).json({ message: 'Truck not found' });
       } else {
         truck.delete();
-        res.status(200).send({ message: 'Truck deleted successfully' });
+        res.status(200).json({ message: 'Truck deleted successfully' });
       }
     })
     .catch(() => {
-      res.status(400).send('Error');
+      res.status(400).json('Error');
     });
 };
 
-const assignTruckById = async (req, res) => {};
+const assignTruckById = async (req, res) => {
+  try {
+    const userId = req.user.id;
+    await Truck.updateMany(
+      { assignedTo: userId },
+      { $set: { assignedTo: null } },
+    );
+    const assignedTo = req.user.id;
+    await Truck.findByIdAndUpdate(
+      {
+        _id: req.params.id,
+      },
+      { $set: { assignedTo } },
+    );
+    res.status(200).json({ message: 'Truck assigned successfully' });
+  } catch {
+    res.status(400).json('Error');
+  }
+};
 
 module.exports = {
   getTrucks,

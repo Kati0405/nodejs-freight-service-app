@@ -52,8 +52,8 @@ const Load = mongoose.model('Load', {
     required: true,
   },
   logs: {
-    type: String,
-    default: null,
+    type: Array,
+    default: [],
   },
   createdDate: {
     type: Date,

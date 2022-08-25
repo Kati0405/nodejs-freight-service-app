@@ -4,6 +4,15 @@ Content-Type: application/json
 {
     "email": "katirin90@gmail.com",
     "password": "katirin",
+    "role": "DRIVER"
+}
+###
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+    "email": "katirin_shipper@gmail.com",
+    "password": "katirin",
     "role": "SHIPPER"
 }
 
@@ -30,12 +39,12 @@ Content-Type: application/json
 
 GET http://localhost:8080/api/users/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxNDE3Njk0fQ._orkbd8xn-ZLtFx5V3PGNeRs3gSPu_IffggUpmcVeyc
 
 ###
 PATCH http://localhost:8080/api/users/me/password
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExMDgzMDd9.9OBqS77BDTVUzRCXCaYDBmOnLHxULLJpoWkJXcPCeLo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
 
 {
   "oldPassword": "katirin",
@@ -50,67 +59,86 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxY
 ###
 GET http://localhost:8080/api/trucks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0MTA1NDh9.P9IzsckhOPlhfHJ5ksnFDLWVWnOZlkGMBprfBAfGvgw
 
 ###
 POST http://localhost:8080/api/trucks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
 
 {
-  "type": "BUS"
+  "type": "SPRINTER",
+      "dimensions": {
+    "width": 300,
+    "length": 250,
+    "height": 170
+  },
+  "payload": 1700
 }
 
 ###
-GET http://localhost:8080/api/trucks/63034adfbb37a79f8ad448d7
+GET http://localhost:8080/api/trucks/6304d98c97d4222e22b81fbb
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
 
 ###
-PUT http://localhost:8080/api/trucks/63034adfbb37a79f8ad448d7
+PUT http://localhost:8080/api/trucks/6304d9c097d4222e22b81fc1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
 
 {
-  "type": "SLOW SPRINTER"
+  "type": "LARGE STRAIGHT",
+      "dimensions": {
+    "width": 700,
+    "length": 350,
+    "height": 200
+  },
+  "payload": 4000
 }
 
+
 ###
-DELETE  http://localhost:8080/api/trucks/630362a6f01ed45e1b28eec9
+DELETE  http://localhost:8080/api/trucks/6304d6c5a556f0ff896dd7a3
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxYWVlMWRmM2JhNmQ3NjJkNyIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjExNjE0MjV9.L9AvqedBYOsSG2DMP-TsUXrmE8eaKkoSvePFxH5siaU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
+
+
+###
+POST http://localhost:8080/api/trucks/6305fd837576a8e791b0c29b/assign
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
 
 
 ###
 POST http://localhost:8080/api/loads
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxNDEyNzU1fQ.54nwzDHKPknmhT9Q1Dgsj-nsSD1ifYvUlw3M4DPK5s0
 
 {
-  "name": "Moving boxes",
-  "payload": 100,
+  "name": "Moving cat",
+  "payload": 50,
   "pickupAddress": "Flat 25, 12/F, Acacia Building 150 Kennedy Road",
   "deliveryAddress": "Sr. Rodrigo Domínguez Av. Bellavista N° 185",
   "dimensions": {
-    "width": 44,
-    "length": 32,
-    "height": 66
+    "width": 20,
+    "length": 12,
+    "height": 11
   }
 }
 
 ###
 GET http://localhost:8080/api/loads
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxNDE3Njk0fQ._orkbd8xn-ZLtFx5V3PGNeRs3gSPu_IffggUpmcVeyc
 
 
 ###
-GET http://localhost:8080/api/loads/63037be6cb30cf8f5540aa7f
+GET http://localhost:8080/api/loads/6307394566673d63dc1f8788
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
 
 ###
-PUT http://localhost:8080/api/loads/63037be6cb30cf8f5540aa7f
+PUT http://localhost:8080/api/loads/63060619dad5f3a5d0aef32
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
 
@@ -130,3 +158,19 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhM
 DELETE http://localhost:8080/api/loads/63037be6cb30cf8f5540aa7f
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+
+###
+POST http://localhost:8080/api/loads/6307394566673d63dc1f8788/post
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxNDEyNzU1fQ.54nwzDHKPknmhT9Q1Dgsj-nsSD1ifYvUlw3M4DPK5s0
+
+
+###
+GET http://localhost:8080/api/loads/active
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0MTc5Mjd9.8EXpHH9kzTPbJgCSoKNgSEN5eCb5eL1H4mvEvTbZ_gw
+
+###
+PATCH http://localhost:8080/api/loads/active/state
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0MTMyMjF9._LZbFJETC2nTvlZ90Oi7noDkgQUoJ1Vk-zYEuW15RaA

@@ -29,7 +29,7 @@ router.delete(
   deleteTruckById,
 );
 
-router.delete(
+router.post(
   '/:id/assign',
   authMiddleware,
   roleMiddleware('DRIVER'),
