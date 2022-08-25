@@ -10,16 +10,16 @@ const authMiddleware = (req, res, next) => {
       .json({ message: 'Please, provide authorization header' });
   }
 
-  const [, token] = authorization.split(' ');
+  const [, jwt_token] = authorization.split(' ');
 
-  if (!token) {
+  if (!jwt_token) {
     return res
       .status(401)
       .json({ message: 'Please, include token to request' });
   }
 
   try {
-    const tokenPayload = jwt.verify(token, secret);
+    const tokenPayload = jwt.verify(jwt_token, secret);
     req.user = tokenPayload;
     next();
   } catch (err) {

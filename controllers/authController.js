@@ -59,8 +59,8 @@ async function loginUser(req, res) {
     if (!validPassword) {
       return res.status(400).json({ message: 'Incorrect password' });
     }
-    const token = generateAccessToken(user._id, user.role, user.email);
-    return res.json({ token });
+    const jwt_token = generateAccessToken(user._id, user.role, user.email);
+    return res.json({ jwt_token });
   } catch (e) {
     console.log(e);
     res.status(400).json({ message: 'Login error' });
@@ -85,18 +85,18 @@ async function forgotPassword(req, res) {
         .status(400)
         .json({ message: 'User with this email does not exist' });
     }
-    const token = jwt.sign({ _id: user._id }, secret);
+    const jwt_token = jwt.sign({ _id: user._id }, secret);
     const data = {
       from: 'noreply@hello.com',
       to: email,
       subject: 'Reset password',
       html: `
         <h2>Please click on given link to reset your password</h2>
-        <p>${process.env.CLIENT_URL}/api/auth/resetpassword/${token}</p>
+        <p>${process.env.CLIENT_URL}/api/auth/resetpassword/${jwt_token}</p>
         `,
     };
 
-    return user.updateOne({ resetLink: token }, () => {
+    return user.updateOne({ resetLink: jwt_token }, () => {
       if (err) {
         return res.status(400).json({ message: 'Reset password link error' });
       }

@@ -29,11 +29,11 @@ function roleMiddleware(role) {
     }
 
     try {
-      const token = req.headers.authorization.split(' ')[1];
-      if (!token) {
+      const jwt_token = req.headers.authorization.split(' ')[1];
+      if (!jwt_token) {
         return res.status(403).json({ message: 'Not authorized' });
       }
-      const { role: userRoles } = jwt.verify(token, secret);
+      const { role: userRoles } = jwt.verify(jwt_token, secret);
       let hasRole = false;
       if (role === userRoles) {
         hasRole = true;
