@@ -137,6 +137,7 @@ const postLoadById = async (req, res) => {
             status: 'ASSIGNED',
             state: 'En Route to Pick Up',
             assignedTo: truck.assignedTo,
+            driver_found: true,
           },
           $push: { logs: { message: 'Truck was found' } },
         },
@@ -158,7 +159,7 @@ const getActiveLoad = async (req, res) => {
     const driverId = req.user.id;
     const activeLoad = await Load.findOne({ assignedTo: driverId });
     if (!activeLoad) {
-      res.status(200).json({ message: 'No active loads' });
+      res.status(200).json({ message: 'No active loads', load: activeLoad });
     } else {
       res.status(200).json({ load: activeLoad });
     }
