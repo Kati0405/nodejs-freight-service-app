@@ -196,6 +196,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 ###
 GET http://localhost:8080/api/weather
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjY3ODZ9.pj9vo_qzHPRp6Zt_3-bqXHfwTI7FFKfNCvnTAsOnVgo
 
 {
   "city": "Kyiv"

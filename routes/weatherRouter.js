@@ -6,7 +6,7 @@ const { getWeatherInCity } = require('../controllers/weatherController');
 
 const { authMiddleware } = require('../middleware/authMiddleware');
 
-router.get('/', getWeatherInCity);
+router.get('/', authMiddleware, getWeatherInCity);
 
 module.exports = {
   weatherRouter: router,
