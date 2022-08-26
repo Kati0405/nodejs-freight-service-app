@@ -42,19 +42,15 @@ const Load = mongoose.model('Load', {
   },
   payload: {
     type: Number,
-    required: true,
   },
   pickupAddress: {
     type: String,
-    required: true,
   },
   deliveryAddress: {
     type: String,
-    required: true,
   },
   dimensions: {
     type: DimensionSchema,
-    required: true,
   },
   logs: {
     type: [LogSchema],

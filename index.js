@@ -14,6 +14,7 @@ const { truckRouter } = require('./routes/truckRouter');
 const { authRouter } = require('./routes/authRouter');
 const { userRouter } = require('./routes/userRouter');
 const { loadRouter } = require('./routes/loadRouter');
+const { weatherRouter } = require('./routes/weatherRouter');
 
 app.use(express.json());
 app.use(morgan('tiny'));
@@ -22,6 +23,7 @@ app.use('/api/trucks', truckRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/users/me', userRouter);
 app.use('/api/loads', loadRouter);
+app.use('/api/weather', weatherRouter);
 
 const start = async () => {
   try {

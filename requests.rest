@@ -37,7 +37,7 @@ Content-Type: application/json
 ###
 GET http://localhost:8080/api/users/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0MjQ0ODl9.uAF02964UOcqtKqTjOOPdR_aoNr0_iNJaX7WhdNqdw4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0NDc2NDR9.MZVKg_U0ozuZTv8G0nVKLTPcZ9TABRYNAY7W50Rjyao
 
 ###
 PATCH http://localhost:8080/api/users/me/password
@@ -63,12 +63,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxY
 ###
 GET http://localhost:8080/api/trucks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0MjY2NDB9.HgTVR5NKQS-zqmbww6C9GzJJfwLR9osi9PEVHf5Vd5E
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
 
 ###
 POST http://localhost:8080/api/trucks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
 
 {
   "type": "SPRINTER",
@@ -78,6 +78,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
     "height": 170
   },
   "payload": 1700
+}
+
+###
+POST http://localhost:8080/api/trucks
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
+
+{
+  "type": "SPRINTER"
 }
 
 ###
@@ -102,15 +111,15 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 
 
 ###
-DELETE  http://localhost:8080/api/trucks/6304d6c5a556f0ff896dd7a3
+DELETE  http://localhost:8080/api/trucks/6308cc548109e1c756a6b327
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
 
 
 ###
-POST http://localhost:8080/api/trucks/6305fd837576a8e791b0c29b/assign
+POST http://localhost:8080/api/trucks/6308ccf98109e1c756a6b32a/assign
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjEyNjEzMDd9.ntsNW758iCgRKCG6_mFR22KtayKzMicK5cWmFj1Idps
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
 
 
 ###
@@ -181,4 +190,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 ###
 PATCH http://localhost:8080/api/loads/active/state
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0MjUzMDh9.aJBAVr_otE4AXCaXKkKXey350Bbl2qTpcy5Fgx0TXJA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE0MzUyNzR9.xRgxw_o-tACwhE81R4XWDQdNPoOAO9i1uRBLpYXYz1A
+
+
+###
+GET http://localhost:8080/api/weather
+Content-Type: application/json
+
+{
+  "city": "Kyiv"
+}

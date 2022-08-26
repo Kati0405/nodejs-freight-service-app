@@ -6,13 +6,12 @@ const Truck = mongoose.model('Truck', {
     required: true,
   },
   dimensions: {
-    width: { type: Number, required: true },
-    length: { type: Number, required: true },
-    height: { type: Number, required: true },
+    width: { type: Number },
+    length: { type: Number },
+    height: { type: Number },
   },
   payload: {
     type: Number,
-    required: true,
   },
   createdDate: {
     type: Date,
