@@ -14,7 +14,6 @@ const LogSchema = mongoose.Schema({
 const Load = mongoose.model('Load', {
   createdBy: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
   },
   assignedTo: {
     type: mongoose.Schema.Types.ObjectId,
@@ -38,7 +37,6 @@ const Load = mongoose.model('Load', {
   },
   name: {
     type: String,
-    required: true,
   },
   payload: {
     type: Number,

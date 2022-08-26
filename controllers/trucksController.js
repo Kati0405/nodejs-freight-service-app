@@ -3,7 +3,7 @@ const { Truck } = require('../models/Truck');
 const getTrucks = async (req, res) => {
   Truck.find({ userId: req.user.userId })
     .then((trucks) => {
-      res.status(200).json({ trucks });
+      res.status(200).json({ trucks: trucks });
     })
     .catch(() => {
       res.status(400).json('Error');
