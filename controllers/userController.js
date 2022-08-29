@@ -1,11 +1,6 @@
 const bcrypt = require('bcryptjs');
-// const multer = require('multer');
 const { User } = require('../models/User');
 const { Image } = require('../models/Image');
-
-// const upload = multer({
-//   storage: Storage,
-// }).single('testImage');
 
 const uploadUserPhoto = async (req, res) => {
   console.log(req.file);

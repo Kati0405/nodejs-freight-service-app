@@ -30,7 +30,7 @@ router.delete('/', authMiddleware, deleteUser);
 router.post(
   '/upload_photo',
   authMiddleware,
-  upload.single('Image'),
+  upload.single('image'),
   uploadUserPhoto,
 );
 
