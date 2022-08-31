@@ -196,11 +196,13 @@ const iterateToNextLoadState = async (req, res) => {
     ];
     const driverId = req.user.id;
     const activeLoad = await Load.findOne({ assignedTo: driverId });
+    console.log(driverId);
     if (!activeLoad) {
       res.status(200).json({ message: 'No active loads' });
     } else {
       const loadState = activeLoad.state;
-      if (loadState !== 'Arrived to delivery') {
+      console.log(loadState);
+      if (loadState !== 'Arrived to Delivery') {
         await activeLoad.updateOne({
           state: states[states.indexOf(loadState) + 1],
         });
@@ -208,7 +210,7 @@ const iterateToNextLoadState = async (req, res) => {
           .status(200)
           .json({ message: `Load state changed to '${loadState}'` });
       } else {
-        await activeLoad.update({ status: 'SHIPPED' });
+        await activeLoad.updateOne({ status: 'SHIPPED' });
         const truck = await Truck.findOne({ assignedTo: driverId });
         await truck.updateOne({ status: 'IS' });
         res
