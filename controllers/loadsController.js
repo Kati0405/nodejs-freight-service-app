@@ -141,14 +141,14 @@ const postLoadById = async (req, res) => {
             state: 'En Route to Pick Up',
             assignedTo: truck.assignedTo,
           },
-          $push: { logs: { message: 'Truck was found', driver_found } },
+          $push: { logs: { message: 'Truck was found' } },
         },
       );
       await Truck.findByIdAndUpdate(
         { _id: truck._id },
         { $set: { status: 'OL' } },
       );
-      res.status(200).json({ message: 'Truck was found' });
+      res.status(200).json({ message: 'Truck was found', driver_found });
     }
   } catch (err) {
     res.status(400).send(err).json('Error');
