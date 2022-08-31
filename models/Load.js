@@ -28,7 +28,7 @@ const Load = mongoose.model('Load', {
     type: String,
     enum: [
       '',
-      'En Route to Pick Up',
+      'En route to Pick Up',
       'Arrived to Pick Up',
       'En Route to Delivery',
       'Arrived to Delivery',
