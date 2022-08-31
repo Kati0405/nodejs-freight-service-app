@@ -109,7 +109,7 @@ const postLoadById = async (req, res) => {
           'dimensions.height': {
             $gte: load.dimensions.height,
           },
-          payload: {
+          'dimensions.payload': {
             $gte: load.payload,
           },
         },

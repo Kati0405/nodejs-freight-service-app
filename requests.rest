@@ -22,7 +22,7 @@ POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "katirin90@gmail.com",
+    "email": "katirin_shipper@gmail.com",
     "password": "katirin"
 }
 
@@ -119,17 +119,17 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 ###
 POST http://localhost:8080/api/loads
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxNDI3OTExfQ.TR5wMRfqWBBJ2Y1mYBOjenn3I2tY28cmd9Bh9O3rMwY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTMyNzE5fQ.KSYYSOOjvuz5oWJx5NKw2p7NGV2t0-E5uUyB_micTGQ
 
 {
   "name": "Moving boxes",
-  "payload": 2000,
+  "payload": 100,
   "pickupAddress": "Flat 25, 12/F, Acacia Building 150 Kennedy Road",
   "deliveryAddress": "Sr. Rodrigo Domínguez Av. Bellavista N° 185",
   "dimensions": {
-    "width": 200,
-    "length": 150,
-    "height": 180
+    "width": 44,
+    "length": 32,
+    "height": 66
   }
 }
 
