@@ -22,7 +22,7 @@ POST http://localhost:8080/api/auth/login
 Content-Type: application/json
 
 {
-    "email": "katirin_shipper@gmail.com",
+    "email": "katirin90@gmail.com",
     "password": "katirin"
 }
 
@@ -63,7 +63,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDI4MDQxY
 ###
 GET http://localhost:8080/api/trucks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5Mzk2NDB9.30uQWmxoOJCVGUKz2ZEPdRhbrwCmCl1awolmWeKeXUA
 
 ###
 POST http://localhost:8080/api/trucks
@@ -119,7 +119,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5M
 ###
 POST http://localhost:8080/api/loads
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTM4NjYyfQ.rzFnsuwYgh5LIz4pfiJk7wcv-CS0TOI0sAJnPsxffKQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTQxMTU1fQ.Ve-G8ZSSE7JO5rMeoDP0TMZvwIwBjZk2c-sgyCkBG4Q
 
 {
   "name": "Moving boxes",
@@ -167,9 +167,9 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
 
 ###
-POST http://localhost:8080/api/loads/630f2c017bab54d12595f198/post
+POST http://localhost:8080/api/loads/630f329148c0181787eea304/post
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTM4NjYyfQ.rzFnsuwYgh5LIz4pfiJk7wcv-CS0TOI0sAJnPsxffKQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTQwMzQwfQ.UEZ9SU0I7Sv_SEb_qvD_SaUHpGi9Zdnsc2FDQ3wUqHE
 
 ###
 GET http://localhost:8080/api/loads/6307515f799ddf2d61d6aa7f/shipping_info
@@ -179,12 +179,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhM
 ###
 GET http://localhost:8080/api/loads/active
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5Mzg3Mzh9.BH3XRDi4mXp6464mFdS1ri6Niw1YZ8iGkDdA6Z4tBGc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5Mzk2NDB9.30uQWmxoOJCVGUKz2ZEPdRhbrwCmCl1awolmWeKeXUA
 
 ###
 PATCH http://localhost:8080/api/loads/active/state
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5MzgwMTJ9.p8gmIalw8l_MeUjBRFn2QM2zkReEusAtD6McdnktOqE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5Mzk2NDB9.30uQWmxoOJCVGUKz2ZEPdRhbrwCmCl1awolmWeKeXUA
 
 
 ###
