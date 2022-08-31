@@ -1,5 +1,12 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
+
+const corsOptions = {
+  origin: 'http://localhost:8081',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
 
 require('dotenv').config();
 
@@ -9,6 +16,8 @@ const mongoose = require('mongoose');
 mongoose.connect(
   'mongodb+srv://k_kovshykova:verystrongpassword@kkovcluster.gwnk0hh.mongodb.net/freight-service?retryWrites=true&w=majority',
 );
+
+app.use(cors(corsOptions));
 
 const { truckRouter } = require('./routes/truckRouter');
 const { authRouter } = require('./routes/authRouter');
@@ -37,8 +46,14 @@ start();
 
 // ERROR HANDLER
 function errorHandler(err, req, res) {
-  console.error(err);
+  console.error(err.stack);
   res.status(500).send({ message: 'Server error' });
 }
 
-app.use(errorHandler);
+function logErrors(err, req, res, next) {
+  console.error(err.stack);
+  next(err);
+}
+
+app.use(logErrors);
+//app.use(errorHandler);
