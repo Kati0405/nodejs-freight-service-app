@@ -138,7 +138,7 @@ const postLoadById = async (req, res) => {
         {
           $set: {
             status: 'ASSIGNED',
-            state: 'En Route to Pick Up',
+            state: 'En route to Pick Up',
             assignedTo: truck.assignedTo,
           },
           $push: { logs: { message: 'Truck was found' } },
