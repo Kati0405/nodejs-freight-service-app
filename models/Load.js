@@ -59,9 +59,6 @@ const Load = mongoose.model('Load', {
     immutable: true,
     default: () => Date.now(),
   },
-  driver_found: {
-    type: Boolean,
-  },
 });
 
 module.exports = {

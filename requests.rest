@@ -68,7 +68,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 ###
 POST http://localhost:8080/api/trucks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5MzE4MDF9.Opqb0kU8TqFDa9E_PkyU6fjpXBk9krylkXuag_roalI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5MzQ1OTB9.yyo4xrNMcb9Z4JxDt1OcICD3jt82kGlbvFDTHHN071Y
 
 {
   "type": "SPRINTER"
@@ -111,7 +111,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 
 
 ###
-POST http://localhost:8080/api/trucks/6308ccf98109e1c756a6b32a/assign
+POST http://localhost:8080/api/trucks/630f1c0dd41a9006c8629c95/assign
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
 
@@ -119,7 +119,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 ###
 POST http://localhost:8080/api/loads
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTMyNzE5fQ.KSYYSOOjvuz5oWJx5NKw2p7NGV2t0-E5uUyB_micTGQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTM0Njc2fQ.ACVmAmhT8mw6Jgo1eYClZ-x1m12XR2WNNZiyuv_YEMw
 
 {
   "name": "Moving boxes",
@@ -167,9 +167,9 @@ Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
 
 ###
-POST http://localhost:8080/api/loads/630760de1d3bff5bd485df73/post
+POST http://localhost:8080/api/loads/630f21ce62820a5a45b90a15/post
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDM2ZjVhMThiYjZlMmFiYWE0NWQ3NSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluOTBAZ21haWwuY29tIiwiaWF0IjoxNjYxMTY5NTA1fQ.wZnhfujvXJVvLN9SLaT6DyxWanz5Rm010YzVBJ6gAvU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDYwNWRlZGFkNWYzYTVkMGFlZjMyMSIsInJvbGUiOiJTSElQUEVSIiwiZW1haWwiOiJrYXRpcmluX3NoaXBwZXJAZ21haWwuY29tIiwiaWF0IjoxNjYxOTM0Njc2fQ.ACVmAmhT8mw6Jgo1eYClZ-x1m12XR2WNNZiyuv_YEMw
 
 ###
 GET http://localhost:8080/api/loads/6307515f799ddf2d61d6aa7f/shipping_info

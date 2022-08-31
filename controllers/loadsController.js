@@ -116,7 +116,9 @@ const postLoadById = async (req, res) => {
       },
     ]);
     const truck = trucks ? trucks[0] : null;
+    let driver_found;
     if (!truck) {
+      driver_found = false;
       await Load.findByIdAndUpdate(
         {
           _id: req.params.id,
@@ -126,8 +128,9 @@ const postLoadById = async (req, res) => {
           $push: { logs: { message: 'No truck found' } },
         },
       );
-      res.status(200).json({ message: 'No truck found' });
+      res.status(200).json({ message: 'No truck found', driver_found });
     } else {
+      driver_found = true;
       await Load.findByIdAndUpdate(
         {
           _id: req.params.id,
@@ -137,16 +140,15 @@ const postLoadById = async (req, res) => {
             status: 'ASSIGNED',
             state: 'En Route to Pick Up',
             assignedTo: truck.assignedTo,
-            driver_found: true,
           },
-          $push: { logs: { message: 'Truck was found' } },
+          $push: { logs: { message: 'Truck was found', driver_found } },
         },
       );
       await Truck.findByIdAndUpdate(
         { _id: truck._id },
         { $set: { status: 'OL' } },
       );
-      res.status(200).json({ message: 'Truck was found', driver_found });
+      res.status(200).json({ message: 'Truck was found' });
     }
   } catch (err) {
     res.status(400).send(err).json('Error');
@@ -198,7 +200,7 @@ const iterateToNextLoadState = async (req, res) => {
       res.status(200).json({ message: 'No active loads' });
     } else {
       const loadState = activeLoad.state;
-      if (loadState !== 'Arrived to Delivery') {
+      if (loadState !== 'Arrived to delivery') {
         await activeLoad.updateOne({
           state: states[states.indexOf(loadState) + 1],
         });
