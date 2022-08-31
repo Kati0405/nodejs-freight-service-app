@@ -9,9 +9,7 @@ const Truck = mongoose.model('Truck', {
     width: { type: Number },
     length: { type: Number },
     height: { type: Number },
-  },
-  payload: {
-    type: Number,
+    payload: { type: Number },
   },
   createdDate: {
     type: Date,

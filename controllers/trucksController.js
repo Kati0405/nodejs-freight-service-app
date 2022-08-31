@@ -1,5 +1,26 @@
 const { Truck } = require('../models/Truck');
 
+const trucksDimentions = {
+  SPRINTER: {
+    width: 300,
+    length: 250,
+    height: 170,
+    payload: 1700,
+  },
+  'SMALL STRAIGHT': {
+    width: 500,
+    length: 250,
+    height: 170,
+    payload: 2500,
+  },
+  'LARGE STRAIGHT': {
+    width: 700,
+    length: 350,
+    height: 200,
+    payload: 4000,
+  },
+};
+
 const getTrucks = async (req, res) => {
   Truck.find({ userId: req.user.userId })
     .then((trucks) => {
@@ -12,12 +33,15 @@ const getTrucks = async (req, res) => {
 
 const createTruck = async (req, res) => {
   const createdBy = req.user.id;
-  const { type, dimensions, payload } = req.body;
+  let { type, dimensions } = req.body;
+  const defaultDimentions = trucksDimentions[type];
+  if (!dimensions && defaultDimentions) {
+    dimensions = defaultDimentions;
+  }
   const truck = new Truck({
     createdBy,
     type,
     dimensions,
-    payload,
   });
   truck
     .save()

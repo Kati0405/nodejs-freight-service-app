@@ -68,16 +68,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3M
 ###
 POST http://localhost:8080/api/trucks
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDRkNWY3MTBhNzZlNDczMTQxMjM3MSIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE1MjA5MTZ9.BBfSCr1aCcgLR-k-n9hTSnvF9I5E0xRVE-gZGMBNtUE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMDhlMmY5MWEyYjRhN2ZlNjM1MDIwNiIsInJvbGUiOiJEUklWRVIiLCJlbWFpbCI6ImthdGlyaW45MEBnbWFpbC5jb20iLCJpYXQiOjE2NjE5MzE4MDF9.Opqb0kU8TqFDa9E_PkyU6fjpXBk9krylkXuag_roalI
 
 {
-  "type": "SPRINTER",
-      "dimensions": {
-    "width": 300,
-    "length": 250,
-    "height": 170
-  },
-  "payload": 1700
+  "type": "SPRINTER"
 }
 
 ###
