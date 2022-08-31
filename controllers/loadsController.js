@@ -189,32 +189,35 @@ const getLoadShippingInfo = async (req, res) => {
 const iterateToNextLoadState = async (req, res) => {
   try {
     const states = [
+      'En route to Pick Up',
       'Arrived to Pick Up',
       'En Route to Delivery',
       'Arrived to Delivery',
     ];
     const driverId = req.user.id;
     const activeLoad = await Load.findOne({ assignedTo: driverId });
-    console.log(driverId);
     if (!activeLoad) {
       res.status(200).json({ message: 'No active loads' });
     } else {
-      const loadState = activeLoad.state;
-      console.log(loadState);
-      if (loadState !== 'Arrived to Delivery') {
+      const currentState = activeLoad.state;
+      const newState = states[states.indexOf(currentState) + 1];
+      if (newState !== 'Arrived to Delivery') {
         await activeLoad.updateOne({
-          state: states[states.indexOf(loadState) + 1],
+          state: newState,
         });
         res
           .status(200)
-          .json({ message: `Load state changed to '${loadState}'` });
+          .json({ message: `Load state changed to '${newState}'` });
       } else {
-        await activeLoad.updateOne({ status: 'SHIPPED' });
+        await activeLoad.updateOne({
+          status: 'SHIPPED',
+          state: 'Arrived to Delivery',
+        });
         const truck = await Truck.findOne({ assignedTo: driverId });
         await truck.updateOne({ status: 'IS' });
         res
           .status(200)
-          .json({ message: `Load state changed to '${loadState}'` });
+          .json({ message: `Load state changed to '${newState}'` });
       }
     }
   } catch (err) {
