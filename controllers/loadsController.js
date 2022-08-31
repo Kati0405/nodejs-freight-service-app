@@ -189,7 +189,7 @@ const getLoadShippingInfo = async (req, res) => {
 const iterateToNextLoadState = async (req, res) => {
   try {
     const states = [
-      'En Route to Pick Up',
+      'En route to Pick Up',
       'Arrived to Pick Up',
       'En Route to Delivery',
       'Arrived to Delivery',
