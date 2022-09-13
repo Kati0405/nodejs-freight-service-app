@@ -2,7 +2,7 @@ const { Load } = require('../models/Load');
 const { Truck } = require('../models/Truck');
 
 const getLoads = async (req, res) => {
-  Load.find({ userId: req.user.userId })
+  await Load.find({ userId: req.user.userId })
     .then((loads) => {
       res.status(200).json({ loads });
     })
@@ -23,7 +23,7 @@ const createLoad = async (req, res) => {
     dimensions,
     createdBy,
   });
-  load
+  await load
     .save()
     .then((result) => {
       res.status(200).json({ message: 'Load created successfully', result });
@@ -66,7 +66,7 @@ const updateLoadById = async (req, res) => {
 };
 
 const deleteLoadById = async (req, res) => {
-  Load.findById(req.params.id)
+  await Load.findById(req.params.id)
     .then((load) => {
       if (!load) {
         res.status(404).json({ message: 'Load not found' });
@@ -81,9 +81,6 @@ const deleteLoadById = async (req, res) => {
 };
 
 const postLoadById = async (req, res) => {
-  // Шіпер натискає на пост і відбувається пошук трака (ІС + заасайнений драйвер) та пейлоад лоаду менший за пейлоад трака і діменшини менші
-  // якщо такий трак знайдено то статус міняється на ассайнд, якщо ні - на нью
-  // ця інформаця має бути записана в логи
   try {
     await Load.findByIdAndUpdate(
       {
@@ -156,7 +153,6 @@ const postLoadById = async (req, res) => {
 };
 
 const getActiveLoad = async (req, res) => {
-  // load, де асайнд - айді драйвера
   try {
     const driverId = req.user.id;
     const activeLoad = await Load.findOne({ assignedTo: driverId });

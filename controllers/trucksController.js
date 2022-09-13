@@ -22,7 +22,7 @@ const trucksDimentions = {
 };
 
 const getTrucks = async (req, res) => {
-  Truck.find({ userId: req.user.userId })
+  await Truck.find({ userId: req.user.userId })
     .then((trucks) => {
       res.status(200).json({ trucks: trucks });
     })
@@ -43,7 +43,7 @@ const createTruck = async (req, res) => {
     type,
     dimensions,
   });
-  truck
+  await truck
     .save()
     .then((result) => {
       res.status(200).json({ message: 'Truck created successfully', result });
@@ -77,7 +77,7 @@ const updateTruckById = async (req, res) => {
 };
 
 const deleteTruckById = async (req, res) => {
-  Truck.findById(req.params.id)
+  await Truck.findById(req.params.id)
     .then((truck) => {
       if (!truck) {
         res.status(404).json({ message: 'Truck not found' });

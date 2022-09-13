@@ -79,7 +79,7 @@ async function getUsers(req, res) {
 
 async function forgotPassword(req, res) {
   const { email } = req.body;
-  User.findOne({ email }, (err, user) => {
+  await User.findOne({ email }, (err, user) => {
     if (err || !user) {
       return res
         .status(400)

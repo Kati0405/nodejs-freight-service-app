@@ -10,7 +10,7 @@ const uploadUserPhoto = async (req, res) => {
       contentType: 'image/png',
     },
   });
-  newImage
+  await newImage
     .save()
     .then(() =>
       res.status(200).json({ message: 'Image was successfully uploaded' }),
@@ -20,7 +20,7 @@ const uploadUserPhoto = async (req, res) => {
 
 const getUserInfo = async (req, res) => {
   try {
-    User.findById(req.user.id).then((user) => {
+    await User.findById(req.user.id).then((user) => {
       res.status(200).send({ user });
     });
   } catch (err) {
@@ -44,7 +44,7 @@ const changeUserPassword = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   try {
-    User.findByIdAndDelete(req.user.id).then(() => {
+    await User.findByIdAndDelete(req.user.id).then(() => {
       res.status(200).send({ message: 'Profile deleted successfully' });
     });
   } catch (err) {
